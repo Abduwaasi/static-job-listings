@@ -1,13 +1,224 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@300;500&display=swap");
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+body {
+  font-size: 15px;
+  background-color: hsl(180, 45%, 89%);
+  font-family: "Spartan", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  margin-top: 2rem;
+}
+
+.header {
+  padding: 4rem;
+  background-image: url(./assets/bg-header-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.job-listings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-radius: 5px;
+  padding: 1rem 1.2rem;
+  margin: 0.5rem auto;
+  width: 80%;
+  max-width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s linear;
+}
+
+.job-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.company {
+  color: hsl(180, 29%, 50%);
+  padding-bottom: 0.5rem;
+}
+
+.featured,
+.new {
+  text-transform: uppercase;
+  color: white;
+  padding: 0.3rem 0.5rem;
+  margin-left: 0.5rem;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  font-size: 0.6rem;
+}
+
+.featured {
+  background-color: black;
+}
+
+.new {
+  background-color: hsl(180, 29%, 50%);
+}
+
+.position {
+  color: hsl(180, 14%, 20%);
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.time {
+  color: hsl(180, 8%, 52%);
+  font-weight: 300;
+}
+
+.categories {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category {
+  color: hsl(180, 29%, 50%);
+  background-color: hsl(180, 45%, 89%);
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.category:hover {
+  background-color: hsl(180, 29%, 50%);
+  color: white;
+}
+
+.position:hover {
+  color: hsl(180, 29%, 50%);
+}
+
+.top-categories {
+  margin: 2rem auto;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 1rem;
+  width: 80%;
+  max-width: 100%;
+  position: relative;
+}
+
+.top-category h5 {
+  display: flex;
+  align-items: center;
+  color: hsl(180, 29%, 50%);
+  background-color: hsl(180, 45%, 89%);
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.top-category img {
+  background-color: hsl(180, 29%, 50%);
+  cursor: pointer;
+  color: white;
+  padding: 0.55rem;
+  margin: -0.55rem -0.55rem -0.55rem 0.5rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: all 0.2s linear;
+}
+
+.top-category img:hover {
+  background-color: black;
+}
+
+.clear-btn {
+  background: none;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  color: hsl(180, 29%, 50%);
+  transition: all 0.2s linear;
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+  margin-left: 2rem;
+}
+
+.clear-btn:hover {
+  text-decoration: underline hsl(180, 29%, 50%);
+}
+
+footer {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+footer a {
+  color: hsl(180, 29%, 50%);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 870px) {
+  .categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .job-listings {
+    flex-direction: column;
+    align-items: unset;
+  }
+  .top-categories {
+    flex-wrap: wrap;
+    align-items: unset;
+  }
+  .time {
+    padding-bottom: 1rem;
+  }
+  .job-info {
+    flex-direction: column;
+    align-items: unset;
+  }
+  .job-info img {
+    height: 100px;
+    width: 100px;
+  }
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .job-listings {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  .job-info {
+    margin-top: 2rem;
+  }
+  .job-info img {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -1rem;
+  }
+  .time {
+    border-bottom: 1px solid hsl(180, 8%, 52%);
+  }
+  .categories {
+    padding-top: 1rem;
+  }
 }

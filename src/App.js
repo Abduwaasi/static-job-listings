@@ -1,25 +1,78 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { data } from "./data";
+import Job_Info from "./components/Job_Info";
+import Categories from "./components/Categories";
+import Top_Categories from "./components/Top_Categories";
 
-function App() {
+const App = () => {
+  const [jobs, setJobs] = useState(data);
+  const [categories, setCategories] = useState([]);
+
+  const filterCategory = (category) => {
+    const newCategory = data.filter(
+      (item) =>
+        item.role === category ||
+        item.level === category ||
+        item.languages.includes(category) ||
+        item.tools.includes(category)
+    );
+
+    if (categories.includes(category)) {
+      return null;
+    } else {
+      const newItem = { id: new Date().getTime().toString(), title: category };
+      setCategories([...categories, newItem]);
+    }
+    setJobs(newCategory);
+  };
+
+  const deleteItem = (id) => {
+    setCategories(categories.filter((item) => item.id !== id));
+    if (categories.length < 0) {
+      setJobs(data);
+      return;
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <>
+      <header className="header"></header>
+      {categories.length > 0 && (
+        <section className="categories top-categories">
+          <Top_Categories
+            data={data}
+            categories={categories}
+            setCategories={setCategories}
+            setJobs={setJobs}
+            deleteItem={deleteItem}
+          />
+        </section>
+      )}
+      <div className="container">
+        {jobs.map((item) => {
+          return (
+            <div className="job-listings" key={item.id}>
+              <Job_Info item={item} />
+              <div className="categories">
+                <Categories item={item} filterCategory={filterCategory} />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <footer>
+        Challenge by{" "}
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          Frontend Mentor
         </a>
-      </header>
-    </div>
+        . Coded by{" "}
+        <a href="https://www.linkedin.com/in/kelvin-ochubili/">
+          Kelvin Ochubili
+        </a>
+        .
+      </footer>
+    </>
   );
-}
+};
 
 export default App;
