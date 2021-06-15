@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { data } from "./data";
-import Job_Info from "./components/Job_Info";
+import JobInfo from "./components/JobInfo";
 import Categories from "./components/Categories";
-import Top_Categories from "./components/Top_Categories";
+import TopCategories from "./components/TopCategories";
 
 const App = () => {
   const [jobs, setJobs] = useState(data);
