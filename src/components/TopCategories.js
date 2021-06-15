@@ -1,6 +1,6 @@
 import React from "react";
 import icon_remove from "../assets/icon_remove.svg";
-const Top_Categories = ({
+const TopCategories = ({
   categories,
   setJobs,
   setCategories,
@@ -33,4 +33,4 @@ const Top_Categories = ({
   );
 };
 
-export default Top_Categories;
+export default TopCategories;

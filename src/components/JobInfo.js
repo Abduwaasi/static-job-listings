@@ -1,6 +1,6 @@
 import React from "react";
 
-const Job_Info = ({ item }) => {
+const JobInfo = ({ item }) => {
   const {
     company,
     logo,
@@ -31,4 +31,4 @@ const Job_Info = ({ item }) => {
   );
 };
 
-export default Job_Info;
+export default JobInfo;

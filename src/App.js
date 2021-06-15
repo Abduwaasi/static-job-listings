@@ -39,7 +39,7 @@ const App = () => {
       <header className="header"></header>
       {categories.length > 0 && (
         <section className="categories top-categories">
-          <Top_Categories
+          <TopCategories
             data={data}
             categories={categories}
             setCategories={setCategories}
@@ -52,7 +52,7 @@ const App = () => {
         {jobs.map((item) => {
           return (
             <div className="job-listings" key={item.id}>
-              <Job_Info item={item} />
+              <JobInfo item={item} />
               <div className="categories">
                 <Categories item={item} filterCategory={filterCategory} />
               </div>
