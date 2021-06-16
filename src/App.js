@@ -62,11 +62,11 @@ const App = () => {
       </div>
       <footer>
         Challenge by{" "}
-        <a href="https://www.frontendmentor.io?ref=challenge">
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
           Frontend Mentor
         </a>
         . Coded by{" "}
-        <a href="https://www.linkedin.com/in/kelvin-ochubili/">
+        <a href="https://www.linkedin.com/in/kelvin-ochubili/" target="_blank">
           Kelvin Ochubili
         </a>
         .
