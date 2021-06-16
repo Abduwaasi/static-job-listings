@@ -26,10 +26,12 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: https://www.frontendmentor.io/solutions/static-jobs-listings-with-filter-using-react-js-qACbcR50b
 - Live Site URL: https://react-static-job-listings.netlify.app/
 
 ### Built with
+![filter](https://user-images.githubusercontent.com/65035717/122199708-3da98900-ce92-11eb-97a7-64327d14a3e3.PNG)
+![filter](https://user-images.githubusercontent.com/65035717/122199808-5a45c100-ce92-11eb-8c73-e2fac60a08cf.PNG)
 
 - Flexbox
 - Responsive-Web-design
