@@ -28,7 +28,7 @@ const App = () => {
 
   const deleteItem = (id) => {
     setCategories(categories.filter((item) => item.id !== id));
-    if (categories.length < 0) {
+    if (categories.length === 1) {
       setJobs(data);
       return;
     }
